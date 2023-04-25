@@ -744,9 +744,9 @@ def hipEventQuery(event):
         Event to Query.
     """
     status = _libhip.hipEventQuery(event)
-    if status == hipExceptions[0]:      # hipSuccess
+    if status == hipExceptions[hipSuccess()]:           # hipSuccess
         return True
-    elif status == hipExceptions[600]:  # hipErrorNotReady
+    elif status == hipExceptions[hipErrorNotReady()]:   # hipErrorNotReady
         return False
     else:
         hipCheckStatus(status)
