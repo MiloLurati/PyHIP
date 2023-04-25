@@ -56,10 +56,7 @@ def test_hipMemcpyAsync():
 def test_memset():
     len = 4
     x_d = hip.hipMalloc(len)
-
     hip.hipMemset(x_d, 4, len)
-
     output = (ctypes.c_int8 * len)()
-    hip.hipMemcpy_dtoh(output, x_d)
-
+    hip.hipMemcpy_dtoh(output, x_d, len)
     assert all(output[i] == 4 for i in range(len(output)))
