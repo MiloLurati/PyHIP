@@ -52,3 +52,11 @@ def test_hipMemcpyAsync():
         assert res[i] == in_val[i]
     hip.hipFree(ptr)
     hip.hipStreamDestroy(stream)
+
+def test_memset():
+    x = hip.hipMalloc(4)
+    hip.hipMemset(x, 33, 4)
+    output = (ctypes.c_int8 * 4)()
+    hip.hipMemcpy_dtoh(output, x, 4)
+
+    assert all(output == (ctypes.c_int8 * 4)(*([33] * 4)))
