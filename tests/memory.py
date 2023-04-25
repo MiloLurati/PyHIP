@@ -54,9 +54,9 @@ def test_hipMemcpyAsync():
     hip.hipStreamDestroy(stream)
 
 def test_memset():
-    len = 4
-    x_d = hip.hipMalloc(len)
-    hip.hipMemset(x_d, 4, len)
-    output = (ctypes.c_int8 * len)()
-    hip.hipMemcpy_dtoh(output, x_d, len)
+    size = 4
+    x_d = hip.hipMalloc(size)
+    hip.hipMemset(x_d, 4, size)
+    output = (ctypes.c_int8 * size)()
+    hip.hipMemcpy_dtoh(output, x_d, size)
     assert all(output[i] == 4 for i in range(len(output)))
