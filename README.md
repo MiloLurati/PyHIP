@@ -8,6 +8,30 @@ There are two parts of it, hip library and hiprtc library.
 
 This also works with [hip-on-nv](https://github.com/jatinx/hip-on-nv).
 
+## Installation
+
+### Prerequisites
+
+Before installing pyhip-interface, please make sure you have the following prerequisites installed:
+
+* The Heterogeneous Interface for Portability - [HIP Installation Guide](https://docs.amd.com/bundle/HIP-Installation-Guide-v5.3/page/Introduction_to_HIP_Installation_Guide.html)
+
+### Install with pip
+
+PyHIP can be installed using pip, a package manager for Python. Run the following command in your terminal to install:
+
+`pip install pyhip-interface`
+
+### Install from source
+
+Alternatively, you can install PyHIP from the source code. First, clone the repository from GitHub:
+
+`git clone https://github.com/jatinx/PyHIP`
+
+Then, navigate to the repository directory and run the following command to install:
+
+`python setup.py install`
+
 ## Example Usage
 
 ```python
@@ -54,7 +78,6 @@ From the project folder run ```pytest ./tests/* -v -r A```
 
 If you are an opensource developer and want to contribute to this project, I can use your help in several places depending on your skillset.
 
-- Packaging and release (to be able to install on machines via pip)
 - Adding more tests to the project
 - Adding API documentation and samples
 - Improving HIP API coverage - adding meaningful APIs instead of direct mapping.
@@ -63,8 +86,8 @@ If you are an opensource developer and want to contribute to this project, I can
 
 - Unable to load hip or hiprtc library - OSError: libamdhip64.so: cannot open shared object file: No such file or directory.
 
-- Make sure that LD_LIBRARY_PATH has hip path on it (/opt/rocm/lib or a custom installation path)
+  - Make sure that LD_LIBRARY_PATH has hip path on it (/opt/rocm/lib or a custom installation path)
 
 - Getting error and need to debug
 
-- Set AMD_LOG_LEVEL=7 for maximum verbosity of HIP APIs (this only works on amd platform).
+  - Set AMD_LOG_LEVEL=7 for maximum verbosity of HIP APIs (this only works on amd platform).
