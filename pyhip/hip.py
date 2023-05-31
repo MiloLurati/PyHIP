@@ -1343,7 +1343,7 @@ def hipGetDeviceProperties(deviceId: int):
        Information for the specified device
     """
     device_properties = hipDeviceProperties()
-    status = _libhip.hipGetDeviceProperties(ctypes.pointer(device_properties),
+    status = _libhip.hipGetDeviceProperties(ctypes.byref(device_properties),
                                             deviceId)
     hipCheckStatus(status)
     return device_properties
