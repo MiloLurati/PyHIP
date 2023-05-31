@@ -1326,7 +1326,7 @@ class hipDeviceProperties(ctypes.Structure):
 
 _libhip.hipGetDeviceProperties.restype = int
 _libhip.hipGetDeviceProperties.argtypes = [
-    POINTER(hipDeviceProperties), ctypes.c_int]
+    ctypes.POINTER(hipDeviceProperties), ctypes.c_int]
 
 
 def hipGetDeviceProperties(deviceId: int):
