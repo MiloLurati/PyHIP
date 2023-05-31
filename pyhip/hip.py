@@ -1345,6 +1345,7 @@ def hipGetDeviceProperties(deviceId: int):
     device_properties = hipDeviceProperties()
     status = _libhip.hipGetDeviceProperties(ctypes.byref(device_properties),
                                             deviceId)
+    print(device_properties.maxThreadsPerBlock)
     hipCheckStatus(status)
     return device_properties
 
