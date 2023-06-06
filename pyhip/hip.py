@@ -1253,10 +1253,10 @@ class hipDeviceProperties(ctypes.Structure):
         ('maxTexture3D', ctypes.c_int * 3),
 
         # Addres of HDP_MEM_COHERENCY_FLUSH_CNTL register
-        ('hdpMemFlushCntl', POINTER(ctypes.c_uint)),
+        ('hdpMemFlushCntl', POINTER(ctypes.c_int)),
 
         # Addres of HDP_REG_COHERENCY_FLUSH_CNTL register
-        ('hdpRegFlushCntl', POINTER(ctypes.c_uint)),
+        ('hdpRegFlushCntl', POINTER(ctypes.c_int)),
 
         # Maximum pitch in bytes allowed by memory copies
         ('memPitch', ctypes.c_size_t),
